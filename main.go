@@ -10,8 +10,8 @@ import (
 )
 
 func main() {
+	//调用浏览器打开网站
 	if runtime.GOOS == "windows" { // Windwos
-		//调用浏览器打开网站
 		exec.Command(`cmd`, `/c`, `start`, `http://localhost`).Start()
 	} else if runtime.GOOS == "darwin" { // MAC
 		exec.Command(`open`, `http://localhost`).Start()

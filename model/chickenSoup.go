@@ -26,7 +26,7 @@ func GetRow() chickenSoup {
 	// }
 	// log.Println(rows)
 	// defer rows.Close()
-	row := Db.QueryRow("SELECT * FROM chickensoup ORDER BY RAND() LIMIT 1")
+	row := Db.QueryRow("SELECT * FROM chickensoup WHERE is_delete != 1 ORDER BY RAND() LIMIT 1") //随机查询一条数据
 	chickensoup := chickenSoup{}
 	err := row.Scan(&chickensoup.ID,
 		&chickensoup.Title,
@@ -39,10 +39,10 @@ func GetRow() chickenSoup {
 	if err != nil {
 		log.Fatalln(err)
 	}
-	// log.Println(row)
-	// log.Println(chickensoup)
-	// log.Println(chickensoup.Content)
-	// log.Println(chickensoup.Title)
-	// log.Println(chickensoup.Hits)
+	log.Println(chickensoup.Content)
+
+	chickensoup.Hits++
+	Db.Exec("UPDATE chickensoup SET hits = ? WHERE id = ? AND is_delete != 1", chickensoup.Hits, chickensoup.ID) //增加点击次数
+
 	return chickensoup
 }
