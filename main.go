@@ -6,14 +6,14 @@ import (
 	"os/exec"
 	"runtime"
 
-	_ "github.com/zgcwkj/poisonousChickenSoup/routers"
+	_ "poisonousChickenSoup/routers"
 )
 
 func main() {
 	//调用浏览器打开网站
 	if runtime.GOOS == "windows" { // Windwos
 		exec.Command(`cmd`, `/c`, `start`, `http://localhost`).Start()
-	} else if runtime.GOOS == "darwin" { // MAC
+	} else if runtime.GOOS == "darwin" { // Mac
 		exec.Command(`open`, `http://localhost`).Start()
 	} else if runtime.GOOS == "linux" { // Linux
 		exec.Command(`xdg-open`, `http://localhost`).Start()

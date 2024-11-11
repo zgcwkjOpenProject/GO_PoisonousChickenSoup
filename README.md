@@ -1,27 +1,46 @@
-# ¶¾¼¦ÌÀ - GoLang
+ï»¿# æ¯’é¸¡æ±¤ - GoLang
 
-## ×ÊÁÏ
+## èµ„æ–™
 
-golang °æ±¾£º11
+golang ç‰ˆæœ¬ï¼š11
 
-mysql °æ±¾£º5.5
+mysql ç‰ˆæœ¬ï¼š5.5
 
-## µ¼ÈëÊı¾İ
+## æ•°æ®åº“
 
-¼ÇÊÂ±¾´ò¿ª model/mysql.sql £¬ÔÚ mysql ÖĞµ¼Èë
+1. å¯¼å…¥æ•°æ®ï¼šè®°äº‹æœ¬æ‰“å¼€ model/mysql.sql ï¼Œåœ¨ mysql ä¸­å¯¼å…¥
+2. é…ç½®æ•°æ®åº“ï¼šè®°äº‹æœ¬æ‰“å¼€ config/mysql.toml ï¼Œå¯¹åº”å‚æ•°è¿›è¡Œç¼–è¾‘
 
-## Êı¾İ¿âÅäÖÃ
+## ç¼–è¯‘ä¸è¿è¡Œï¼ˆGolangï¼‰
 
-¼ÇÊÂ±¾´ò¿ª config/mysql.toml £¬¶ÔÓ¦²ÎÊı½øĞĞ±à¼­
+> Env
+```
+export CGO_ENABLED=0
+export GOOS=linux 
+export GOARCH=mipsle
 
-## ÔËĞĞ
+export CGO_ENABLED=0
+export GOOS=windows
+export GOARCH=amd64
 
-```go run ./main.go```
+export CGO_ENABLED=0
+export GOOS=darwin
+export GOARCH=amd64
+```
 
-## ËµÃ÷
+> Build
+```
+go run main.go
 
-### ÕâÊÇÎÒÑ§Ï° go ÓïÑÔµÄÏîÄ¿¿ª·¢µÄ£¬ÇáÅç
+go build
 
-## Ô­×÷Õß
+go build -ldflags="-w -s" -trimpath
+```
 
-[¶¾¼¦ÌÀ£¨PHP£©](https://github.com/egotong/nows)
+## è¯´æ˜
+
+### è¿™æ˜¯æˆ‘å­¦ä¹  go è¯­è¨€çš„é¡¹ç›®å¼€å‘çš„ï¼Œè½»å–·
+
+## åŸä½œè€…
+
+[æ¯’é¸¡æ±¤ï¼ˆPHPï¼‰](https://github.com/egotong/nows)
